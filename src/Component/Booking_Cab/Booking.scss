@@ -1,0 +1,257 @@
+// .booking_container {
+
+//   width: 100vw;
+//   height: 100vh;
+// //   background-image: url("/frontEnd/src/assets/background/5590897.jpg") !important;
+// //   background-position: center;
+// //   background-repeat: no-repeat;
+// //   background-size: cover;
+
+//   .booking_title {
+//     padding: 1rem 0px;
+//     display: flex;
+//     width: 100vw;
+//     align-items: center;
+//     justify-content: center;
+//   }
+ 
+//   .container {
+//     display: flex;
+//     width: 100%;
+
+//     align-items: center;
+//     justify-content: center;
+//     flex-wrap: wrap;
+//     background: linear-gradient(#ffffff,#e8f9fd);
+//     .left {
+//       flex: 0.4;
+//       width: 40%;
+//       align-items: center;
+//       justify-content: center;
+//       display: flex;
+
+//       img {
+//         width: 450px;
+//       }
+//     }
+//     .right {
+// margin: 1rem 2rem;
+//       flex: 0.6;
+//       width: 60%;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       justify-content: center;
+
+//       .Form_Action_Container {
+//         margin: 1rem auto;
+//         width: 30%;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//         gap: 2rem;
+
+//         .OneWay_Btn {
+//           button {
+//             padding: 0.6rem 2rem;
+//             outline: none;
+//             border: transparent;
+//             font-weight: bold;
+//             color: #5c5c5c;
+//             cursor: pointer;
+//             border-bottom: 4px solid rgb(84, 216, 128);
+//             transition: all 0.3s ease-in-out;
+
+//             &:hover {
+//               background-color: rgb(70, 224, 152);
+//               color: #000;
+//             //   border-radius: 2rem;
+//               transition: all 0.3s ease-in-out;
+//             }
+//           }
+//         }
+//         .TwoWay_Btn {
+//           position: relative;
+//           button {
+//             padding: 0.6rem 2rem;
+//             outline: none;
+//             border: transparent;
+//             font-weight: bold;
+//             color: #000000;
+//             cursor: pointer;
+//             border-bottom: 4px solid skyblue;
+//             transition: all 0.3s ease-in-out;
+
+//             &:hover {
+//               background-color: skyblue;
+//               color: #000;
+//             //   border-radius: 2rem;
+//               transition: all 0.3s ease-in-out;
+//             }
+
+//             //   &::after{
+//             //     content: '';
+//             //     width: 100%;
+//             //     height: 4px;
+//             //     background-color: aqua;
+//             //   z-index: 1;
+//             //     position: absolute;
+//             //     bottom: 0%;
+//             //     left: 0%;
+//             //   }
+
+//             //   &:hover::after{
+//             //     width: 100%;
+//             //     height: 100%;
+//             //     color: #000;
+//             //     z-index: -2;
+//             //   }
+//           }
+//         }
+//       }
+
+//       .Form_Container {
+//         width: 100%;
+//         height: 100%;
+//         margin: 1rem auto;
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: center;
+//         align-items: center;
+//         background-color: #fff;
+//        border-radius: 1rem;
+//         box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.4);
+//         // min-height: 60%;
+
+//         .oneWay_form {
+//             position: relative;
+//           width: 100%;
+//           padding: 1rem 3rem;
+//           margin: auto;
+
+//           h2 {
+//             display:inline-block !important;
+//             margin: 0.5rem auto;
+//             padding: 0.5rem 0px;
+//             font-size: 1rem;
+//             display: flex;
+//             color: royalblue;
+//             align-items: flex-start;
+//             justify-content: flex-start;
+//             border-bottom: 2px solid gray;
+//           }
+//           .illustration{
+//             position: absolute;
+//             right: 5%;
+        
+//             top: 4%;
+
+//             img{
+//                 width: 90px;
+//             }
+//           }
+//           .oneWay {
+//             width: 100%;
+//             display: grid;
+//             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+//             grid-row-gap: 1rem;
+//             grid-column-gap: 1rem;
+//             // display: flex;
+//             // align-items: flex-start;
+//             // justify-content: flex-start;
+//             // gap: 1rem;
+//             // flex-wrap: wrap;
+
+//             .form_group {
+//               display: flex;
+//               flex-direction: column;
+
+//               label {
+//                 padding: 0.6rem 0px;
+//                 font-weight: 500;
+//                 color: #5c5c5c;
+//               }
+
+//               input {
+//                 width: 90%;
+
+//                 @media screen and (max-width: 900px) {
+//                   width: 60%;
+//                 }
+//               }
+//               .input {
+//                 padding: 0.5rem 1rem;
+//                 outline: none;
+//                 border: transparent;
+//                 border-bottom: 2px solid gray;
+
+//                 &:focus {
+//                   border-bottom: 2px solid blue;
+//                 }
+//               }
+
+//               .time {
+//                 width: 100%;
+//                 border: none;
+//               }
+//             }
+
+//             .submit_action {
+//               width: 100%;
+//               display: flex;
+//               align-items: center;
+//               justify-content: center;
+//               margin: auto;
+
+//               button {
+//                 padding: 0.7rem 2rem;
+//                 outline: none;
+//                 border: transparent;
+//                 background-color: #6fd943;
+//                 font-weight: bold;
+//                 letter-spacing: 1px;
+//                 cursor: pointer;
+//               }
+//               @media screen and (max-width: 900px) {
+//                 width: 100%;
+//                 display: flex;
+//                 align-items: flex-start;
+//                 justify-content: flex-start;
+//                 margin: auto;
+//               }
+//             }
+
+//             @media screen and (max-width: 900px) {
+//               grid-template-columns: repeat(auto-fit, minmax(550px, 1fr));
+//               grid-row-gap: 2rem;
+//               grid-column-gap: 2rem;
+//             }
+//           }
+//         }
+
+//         @media screen and (max-width: 900px) {
+//           width: 95%;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// .active_toWay {
+//   background-color: skyblue;
+//   color: #000;
+// //   border-radius: 2rem;
+//   transition: all 0.3s ease-in-out;
+// }
+// .active_oneWay {
+//   background-color: rgb(70, 224, 152);
+//   color: #000;
+// //   border-radius: 2rem;
+//   transition: all 0.3s ease-in-out;
+// }
+
+// .error {
+//   color: red !important;
+//   font-weight: 400 !important;
+//   letter-spacing: 1px;
+// }

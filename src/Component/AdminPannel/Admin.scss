@@ -1,0 +1,336 @@
+.adminpannel_container {
+  width: 100vw;
+  max-height: 100vh;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .sidebar_open {
+    position: absolute;
+    top: 2%;
+    left: 6%;
+    display: none;
+    // z-index: -2;
+
+    i {
+      font-size: 1.5rem;
+      color: rgb(85, 241, 119);
+      cursor: pointer;
+      transition: scale 0.4s ease-in-out;
+    }
+
+    @media screen and (max-width: 900px) {
+      display: block;
+    }
+  }
+
+  .left {
+    // flex: 0.4;
+    // display: flex;
+    // align-items: self-start;
+    // justify-content: flex-start;
+  }
+
+  .right {
+    // flex: 0.6;
+    // width: 60%;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: self-start;
+    // justify-content: flex-start;
+    position: absolute;
+    top: 5%;
+    left: 25%;
+    width: 70vw;
+    height: 95vh;
+
+    .vehicle_details {
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        h4 {
+          color: gray;
+          letter-spacing: 1px;
+
+          &::first-letter {
+            color: #000;
+            font-size: 1.5rem;
+          }
+        }
+      }
+      .vehicle_container {
+        margin: 1.5rem 0px;
+        //   width: 95%;
+        //    height: 90%;
+        // background-color: rgb(254, 255, 255);
+
+        .add_vehicle_action {
+          margin: 1rem;
+
+          a {
+            text-decoration: none;
+          }
+          button {
+            padding: 0.6rem 1.5rem;
+            outline: none;
+            border: transparent;
+            background-color: lightgreen;
+            letter-spacing: 1px;
+            font-weight: 550;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+
+            &:hover {
+              background-color: rgb(29, 161, 29);
+              color: #fff;
+              transition: all 0.3s ease-in-out;
+            }
+          }
+        }
+        .vehicle_list_container {
+          width: 100%;
+          // width: 100%;
+          // display: grid;
+          // grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+          display: flex;
+          flex-wrap: wrap;
+          // align-items: flex-start;
+          // justify-content: flex-start;
+          gap: 1rem;
+
+          .list {
+            margin: 1rem auto;
+            max-width: 380px !important;
+            box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+            border-radius: 1rem;
+            padding: 1rem 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .vehicle_title {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              h3 {
+                letter-spacing: 1px;
+
+                &::first-letter {
+                  font-size: 1.5rem;
+                  color: royalblue;
+                }
+              }
+            }
+            .vehicle_image {
+              img {
+                width: 150px;
+
+                @media screen and (max-width:900px){
+                  width: 180px;
+                }
+              }
+            }
+
+            .vehicle_amount {
+              width: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: space-around;
+
+              .km {
+                color: gray;
+                letter-spacing: 1px;
+                font-size: 0.8rem;
+              }
+              .icons {
+                i {
+                  font-size: 2rem;
+                  color: lightgreen;
+                }
+              }
+              .rate {
+                font-size: 0.8rem;
+                h3 {
+                  letter-spacing: 1px;
+                  color: gray;
+                }
+              }
+            }
+
+            .actions {
+              width: 100%;
+              padding: 0.5rem 1rem;
+              // box-shadow: 0px 4px 5px rgba(139, 136, 136, 0.5);
+              margin: 10px auto;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+
+              .edit {
+                i {
+                  font-size: 1.2rem;
+                  color: orange;
+                  cursor: pointer;
+                }
+              }
+              .delete {
+                i {
+                  font-size: 1.2rem;
+                  color: red;
+                  cursor: pointer;
+                }
+              }
+            }
+            @media screen and (max-width: 900px) {
+              margin: 1rem auto;
+              min-width: 380px !important;
+              box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+              border-radius: 1rem;
+              padding: 1rem 2rem;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+            }
+          }
+          @media screen and (max-width: 900px) {
+            width: 95vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+
+        @media screen and (max-width: 900px) {
+          width: 95vw;
+        }
+      }
+    }
+    .booking_details {
+   
+      width: 90vw;
+      height: 100vh;
+      display: flex;
+
+      flex-direction: column;
+
+      .title {
+        h4 {
+          color: gray;
+          letter-spacing: 1px;
+
+          &::first-letter {
+            color: #000;
+            font-size: 1.5rem;
+          }
+        }
+      }
+      .booking_container {
+        width: 80%;
+        margin: 1rem;
+        padding: 2rem 1rem;
+        background-color: #fff !important;
+
+        .list {
+          width: 70vw;
+          display: flex;
+          align-items: center;
+
+          justify-content: space-between;
+          padding: 1rem 2rem;
+          box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.4);
+          margin-bottom: 1rem;
+
+          .pickup,
+          .dropup,
+          .date,
+          .time,
+          .mobile {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            h2 {
+              font-size: 1rem;
+              color: gray;
+              padding-bottom: 5px;
+              border-bottom: 2px solid #8297db;
+
+              @media screen and (max-width: 900px) {
+                border: none;
+              }
+            }
+            p {
+              letter-spacing: 1px;
+            }
+            @media screen and (max-width: 900px) {
+              display: flex !important;
+              flex-direction: row !important;
+              gap: 1rem;
+              width: 100%;
+              align-items: flex-start;
+              justify-content: flex-start;
+            }
+          }
+          .actions {
+            .delete {
+              i {
+                font-size: 1.5rem;
+                color: tomato;
+                cursor: pointer;
+              }
+            }
+            @media screen and (max-width:900px){
+              width: 100%;
+              display: flex;
+              justify-content: flex-end;
+            }
+          }
+          @media screen and (max-width: 900px) {
+            width: 85vw;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            // align-items: center;
+            // justify-content: center;
+            gap: 1rem;
+            margin: 10px auto;
+          }
+        }
+        @media screen and (max-width: 900px) {
+          width: 95%;
+        }
+      }
+      @media screen and (max-width: 900px) {
+        width: 98vw;
+      }
+    }
+    @media screen and (max-width: 900px) {
+      position: absolute;
+      top: 10%;
+      left: 5%;
+      width: 70vw;
+      height: 95vh;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #menubarHide {
+    display: none;
+  }
+  #menubarShow {
+    display: block;
+  }
+}
+
+

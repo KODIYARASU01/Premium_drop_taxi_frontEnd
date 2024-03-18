@@ -1,0 +1,7 @@
+.backarrow{
+    transition: color 0.4s ease-in-out;
+    &:hover{
+        color: red;
+        transition: color 0.4s ease-in-out;
+    }
+}

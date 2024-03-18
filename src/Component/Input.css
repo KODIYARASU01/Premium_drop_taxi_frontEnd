@@ -1,0 +1,30 @@
+/* .form-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+label {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  pointer-events: none;
+  transition: 0.3s ease-out;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease-out;
+}
+
+.focused label {
+  top: -10px;
+  font-size: 12px;
+  color: #007bff;
+}
+
+.focused input {
+  border-color: #007bff;
+} */

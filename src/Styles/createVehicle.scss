@@ -1,0 +1,114 @@
+.create_container{
+    width:100vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    .back_button{
+       padding: 2rem 3rem;
+        width: 100%;
+        display: flex;
+        align-items: self-start;
+        justify-content: flex-start;
+
+        font-size: 2rem;
+        color: blue;
+
+        &:hover{
+            color: red;
+        }
+    }
+    .vehicle_form{
+        background-color: #fff;
+        border-radius: 1rem;
+        width: 30%;
+        min-height: 70%;
+        padding:1rem 2rem;
+        box-shadow: 0px 4px 5px rgba(0,0,0,0.4);
+
+        .form_title{
+            display: flex;
+            align-items: centers;
+            justify-content: center;
+            letter-spacing: 1px;
+        }
+
+        .form{
+            margin: 1rem auto;
+            width: 95%;
+            display: flex;
+            flex-direction: column;
+            align-items:flex-start;
+            justify-content: center;
+
+            .form_group{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                margin-top: 1rem;
+
+                label{
+                    margin-bottom: 10px;
+                    letter-spacing: 1px;
+                    font-weight: bold;
+                }
+
+                input{
+                    outline: none;
+                    padding: 0.5rem 2rem;
+                    border: transparent;
+                    border-bottom: 2px solid gray;
+
+                    &:focus{
+                        border-bottom: 2px solid blue;
+                    }
+                }
+
+                .file{
+                    border: none;
+                }
+            }
+
+            .form_submit{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 1.5rem auto;
+
+                button{
+                    padding: 0.7rem 2rem;
+                    outline: none;
+                    width: 150px;
+                    border: transparent;
+                    background-color: rgb(69, 228, 116);
+                    border-radius: 10px;
+                    letter-spacing: 1px;
+                    font-weight: bold;
+                    transition: all 0.4s ease-in-out;
+                    cursor: pointer;
+
+                    &:hover{
+                        background-color: violet;
+                        transition: all 0.4s ease-in-out;
+                    }
+                }
+            }
+        }
+
+        @media screen and (max-width:900px){
+            width: 95%;
+            min-height: 60%;
+        }
+    }
+
+    @media screen and (max-width:900px){
+        background-image: url(../assets/booking/formBackcground.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
