@@ -107,16 +107,19 @@ const BookingForm = ({
   let [RoundPickUp, setRoundPickUp] = useState("");
   let [RoundDropUp, setRoundDropUp] = useState("");
   let [RoundTime, setRoundTime] = useState("");
+  let[RoundTripMobile,setRoundTripMobile]=useState('')
   //LocalTrip States :
   let [LocalName, setLocalName] = useState("");
   let [LocalPickUp, setLocalPickUp] = useState("");
   const [LocalTime, setLocalTime] = useState("");
+  let[LocalMobile,setLocalMobile]=useState('')
   //AirportTrip States :
   let [TripType, setTripType] = useState("");
   let [AirportPickUp, setAirportPickUp] = useState("");
   let [AirportDropUp, setAirportDropUp] = useState("");
   let [AirportTime, setAirportTime] = useState("");
   let [AirportName, setAirportName] = useState("");
+  let[AirportMobile,setAirportMobile]=useState('')
   //After form submition animation states:
   let [bookForm, setBookForm] = useState(false);
   let [roundForm, setRoundForm] = useState(false);
@@ -255,6 +258,7 @@ const BookingForm = ({
       roundTripDropUpError.innerHTML = "";
     }
   };
+  console.log(RoundTime.length)
   let handleRoundTripTimeError = () => {
     let roundTripTimeError = document.querySelector(".roundTripTimeError");
     if (RoundTime.length === 0) {
@@ -274,24 +278,38 @@ const BookingForm = ({
       roundTripNameError.innerHTML = "";
     }
   };
-  let handleRoundTripPickupDateError = () => {
-    let roundTripPickupDateError = document.querySelector(
-      ".roundTripPickupDateError"
-    );
-    if (RoundPickUp.length === 0) {
-      roundTripPickupDateError.innerHTML = "From Date can't be empty";
+
+  // let handleRoundTripPickupDateError = () => {
+  //   let roundTripPickupDateError = document.querySelector(
+  //     ".roundTripPickupDateError"
+  //   );
+  //   if (RoundPickUp.length === 0) {
+  //     roundTripPickupDateError.innerHTML = "From Date can't be empty";
+  //   } else {
+  //     roundTripPickupDateError.innerHTML = "";
+  //   }
+  // };
+  // let handleRoundTripDropUpDateError = () => {
+  //   let roundTripDropDateError = document.querySelector(
+  //     ".roundTripDropDateError"
+  //   );
+  //   if (RoundDropUp.length === 0) {
+  //     roundTripDropDateError.innerHTML = "To Date can't be empty";
+  //   } else {
+  //     roundTripDropDateError.innerHTML = "";
+  //   }
+  // };
+  let handleRoundTripMobileError = () => {
+    let roundTripmobileError = document.querySelector(".roundTripmobileError");
+    if (RoundTripMobile.length === 0) {
+      roundTripmobileError.innerHTML = "Mobile Number can't be empty";
+    } else if (RoundTripMobile.length < 10) {
+      roundTripmobileError.innerHTML = "Must 10 digit Required";
+    } else if (RoundTripMobile.length > 10) {
+      roundTripmobileError.innerHTML =
+        "Mobile Number Not Acceptable only 10 digit required";
     } else {
-      roundTripPickupDateError.innerHTML = "";
-    }
-  };
-  let handleRoundTripDropUpDateError = () => {
-    let roundTripDropDateError = document.querySelector(
-      ".roundTripDropDateError"
-    );
-    if (RoundDropUp.length === 0) {
-      roundTripDropDateError.innerHTML = "To Date can't be empty";
-    } else {
-      roundTripDropDateError.innerHTML = "";
+      roundTripmobileError.innerHTML = "";
     }
   };
   //LocalTrip Error Handling :
@@ -326,12 +344,25 @@ const BookingForm = ({
       localTripNameError.innerHTML = "";
     }
   };
-  let handleLocalTripDateError = () => {
-    let localTripDateError = document.querySelector(".localTripDateError");
-    if (LocalDate.length === 0) {
-      localTripDateError.innerHTML = "Date can't be empty";
+  // let handleLocalTripDateError = () => {
+  //   let localTripDateError = document.querySelector(".localTripDateError");
+  //   if (LocalDate.length === 0) {
+  //     localTripDateError.innerHTML = "Date can't be empty";
+  //   } else {
+  //     localTripDateError.innerHTML = "";
+  //   }
+  // };
+  let handleLocalTripMobileError = () => {
+    let localTripmobileError = document.querySelector(".localTripmobileError");
+    if (LocalMobile.length === 0) {
+      localTripmobileError.innerHTML = "Mobile Number can't be empty";
+    } else if (LocalMobile.length < 10) {
+      localTripmobileError.innerHTML = "Must 10 digit Required";
+    } else if (LocalMobile.length > 10) {
+      localTripmobileError.innerHTML =
+        "Mobile Number Not Acceptable only 10 digit required";
     } else {
-      localTripDateError.innerHTML = "";
+      localTripmobileError.innerHTML = "";
     }
   };
   //AirportTrip Form Error Handling :
@@ -395,6 +426,19 @@ const BookingForm = ({
       airportTripDateError.innerHTML = "Date can't be empty";
     } else {
       airportTripDateError.innerHTML = "";
+    }
+  };
+  let handleAirportTripMobileError = () => {
+    let ariportTripmobileError = document.querySelector(".ariportTripmobileError");
+    if (AirportMobile.length === 0) {
+      ariportTripmobileError.innerHTML = "Mobile Number can't be empty";
+    } else if (AirportMobile.length < 10) {
+      ariportTripmobileError.innerHTML = "Must 10 digit Required";
+    } else if (AirportMobile.length > 10) {
+      ariportTripmobileError.innerHTML =
+        "Mobile Number Not Acceptable only 10 digit required";
+    } else {
+      ariportTripmobileError.innerHTML = "";
     }
   };
   //Google map API Key
@@ -527,9 +571,10 @@ const BookingForm = ({
     handleRoundTripNameError();
     handleRoundTripDropUpError();
     handleRoundTripPickUpError();
-    handleRoundTripDropUpDateError();
+    // handleRoundTripDropUpDateError();
     handleRoundTripTimeError();
-    handleRoundTripPickupDateError();
+    // handleRoundTripPickupDateError();
+    handleRoundTripMobileError();
 
     //Auto input complete  :
     if (
@@ -573,7 +618,8 @@ const BookingForm = ({
     handleLocalTripNameError();
     handleLocalTripPickUpError();
     handleLocalTripTimeError();
-    handleLocalTripDateError();
+    // handleLocalTripDateError();
+    handleLocalTripMobileError();
 
     //Auto input complete  :
     if (LocalTripOriginRef.current.value === "") {
@@ -613,7 +659,8 @@ const BookingForm = ({
     handleAirportTripPickUpError();
     handleAirportTripDropUpError();
     handleAirportTripTimeError();
-    handleAirportTripDateError();
+    // handleAirportTripDateError();
+    handleAirportTripMobileError();
 
     //Auto input complete  :
     if (
@@ -1145,8 +1192,7 @@ const BookingForm = ({
                       onClick={() => {
                         setTimeShow(true), setRoundTime("");
                       }}
-                      onFocus={handleFocus1}
-                      onBlur={handleBlur1}
+                     
                       id="time"
                     />
                     {TimeShow === true ? (
@@ -1155,6 +1201,8 @@ const BookingForm = ({
                         setTimeShow={setTimeShow}
                         RoundTime={RoundTime}
                         setRoundTime={setRoundTime}
+                        onFocus={handleFocus1}
+                        onBlur={handleBlur1}
                       />
                     ) : (
                       ""
@@ -1186,8 +1234,35 @@ const BookingForm = ({
                     />
                     <div className="roundTripNameError"></div>
                   </div>
-                </div>
-                <div className="submit_action">
+                  <div className="form_group">
+                    <label
+                      htmlFor="mobile"
+                      className={isFocused === true ? "focused" : "unFocused"}
+                    >
+                      Mobile Number
+                    </label>
+                    {isFocused === true ? (
+                      <i className="uil uil-mobile-android-alt"></i>
+                    ) : (
+                      ""
+                    )}
+                    <input
+                      className="input"
+                      type="tel"
+                      name="mobile"
+                      id="mobile"
+                      onKeyUp={handleRoundTripMobileError}
+                      value={RoundTripMobile}
+                      onChange={(e) => {
+                        setRoundTripMobile(e.target.value);
+                      }}
+                    
+                      onFocus={handleFocus}
+                      onBlur={handleBlur}
+                    />
+                    <div className="roundTripmobileError"></div>
+                  </div>
+                  <div className="submit_action">
                   <button onClick={handleRoundTripBooking}>
                     EXPLORE CABS{" "}
                     {loader === true ? <span class="loader"></span> : ""}
@@ -1203,6 +1278,8 @@ const BookingForm = ({
                     )}
                   </button>
                 </div>
+                </div>
+              
               </m.div>
             ) : (
               ""
@@ -1357,8 +1434,35 @@ const BookingForm = ({
                     />
                     <div className="localTripNameError"></div>
                   </div>
-                </div>
-                <div className="submit_action  local_submit">
+                  <div className="form_group">
+                    <label
+                      htmlFor="mobile"
+                      className={isFocused === true ? "focused" : "unFocused"}
+                    >
+                      Mobile Number
+                    </label>
+                    {isFocused === true ? (
+                      <i className="uil uil-mobile-android-alt"></i>
+                    ) : (
+                      ""
+                    )}
+                    <input
+                      className="input"
+                      type="tel"
+                      name="mobile"
+                      id="mobile"
+                      onKeyUp={handleLocalTripMobileError}
+                      value={LocalMobile}
+                      onChange={(e) => {
+                        setLocalMobile(e.target.value);
+                      }}
+                    
+                      onFocus={handleFocus}
+                      onBlur={handleBlur}
+                    />
+                    <div className="localTripmobileError"></div>
+                  </div>
+                  <div className="submit_action  local_submit">
                   <button onClick={handleLocalTripBooking}>
                     EXPLORE CABS{" "}
                     {loader === true ? <span class="loader"></span> : ""}
@@ -1374,6 +1478,8 @@ const BookingForm = ({
                     )}
                   </button>
                 </div>
+                </div>
+               
               </m.div>
             ) : (
               ""
@@ -1575,8 +1681,35 @@ const BookingForm = ({
                     />
                     <div className="airportTripNameError"></div>
                   </div>
-                </div>
-                <div className="submit_action">
+                  <div className="form_group">
+                    <label
+                      htmlFor="mobile"
+                      className={isFocused === true ? "focused" : "unFocused"}
+                    >
+                      Mobile Number
+                    </label>
+                    {isFocused === true ? (
+                      <i className="uil uil-mobile-android-alt"></i>
+                    ) : (
+                      ""
+                    )}
+                    <input
+                      className="input"
+                      type="tel"
+                      name="mobile"
+                      id="mobile"
+                      onKeyUp={handleAirportTripMobileError}
+                      value={AirportMobile}
+                      onChange={(e) => {
+                        setAirportMobile(e.target.value);
+                      }}
+                    
+                      onFocus={handleFocus}
+                      onBlur={handleBlur}
+                    />
+                    <div className="ariportTripmobileError"></div>
+                  </div>
+                  <div className="submit_action">
                   <button onClick={handleAirportTripBooking}>
                     EXPLORE CABS{" "}
                     {loader === true ? <span class="loader"></span> : ""}
@@ -1592,6 +1725,8 @@ const BookingForm = ({
                     )}
                   </button>
                 </div>
+                </div>
+            
               </m.div>
             ) : (
               ""
@@ -1632,6 +1767,7 @@ const BookingForm = ({
           fromDate={fromDate}
           toDate={toDate}
           RoundTripName={RoundTripName}
+          RoundTripMobile={RoundTripMobile}
         />
       ) : (
         ""
@@ -1649,6 +1785,7 @@ const BookingForm = ({
           LocalDate={LocalDate}
           LocalTime={LocalTime}
           LocalName={LocalName}
+          LocalMobile={LocalMobile}
         />
       ) : (
         ""
@@ -1668,6 +1805,7 @@ const BookingForm = ({
           AirportTime={AirportTime}
           AirportDate={AirportDate}
           AirportName={AirportName}
+          AirportMobile={AirportMobile}
         />
       ) : (
         ""

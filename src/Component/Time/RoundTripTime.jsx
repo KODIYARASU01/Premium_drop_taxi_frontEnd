@@ -1,6 +1,6 @@
 import React from "react";
 import "/src/Styles/Time.scss";
-const RoundTripTime = ({ TimeShow, setTimeShow, RoundTime, setRoundTime }) => {
+const RoundTripTime = ({ TimeShow, setTimeShow, RoundTime, setRoundTime, }) => {
   let list = document.querySelector("li");
   let handleTime = (e) => {
     setTimeShow(false);

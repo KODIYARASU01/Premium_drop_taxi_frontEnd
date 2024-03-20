@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useRef } from "react";
 import "./VehicleList.scss";
 import Dzire from "../../assets/Vehicle_list/swiftdzire.png";
 import Ertiga from "../../assets/Vehicle_list/ertiganew.png";
@@ -25,12 +25,12 @@ let vehicle_list = [
     id: 2,
     brandName: "EITIOS",
     image: Eitios,
-    per_km: 14,
+    per_km: 13,
     illustration_Image: illustration,
     details:
       "Eitios: Many of us often wonder about why EITIOS better than a sedan, especially when it comes to road trips. Well, in most cases the SUVs offer more space that can accommodate more people. Many SUVs have three rows of seats and therefore more passengers can fit in compared to a Sedan. The EITIOS also provide higher driving positions and therefore better visibility on the roads.",
     driver_allowance: 450,
-    perKm: 18,
+    perKm: 13,
     price: "",
   },
   {
@@ -95,6 +95,7 @@ const RoundVehicleList = ({
   RoundDropUp,
   RoundTime,
   RoundTripName,
+  RoundTripMobile
 }) => {
   let navigate = useNavigate();
 
@@ -110,6 +111,13 @@ const RoundVehicleList = ({
   });
   const [nextBtnAlert, setNextBtnAlert] = useState(false);
 
+    //Scroll to bottom behaviour :
+
+    let scrollAction = useRef(null);
+    const scrollToBottom = () => {
+      scrollAction.current.scrollIntoView({ behavior: "smooth" });
+    };
+  
   //Filter vehicle_list:
   function handleFilter(name) {
     const value = name;
@@ -148,7 +156,9 @@ const RoundVehicleList = ({
         \n Driver Allowance : Rs : ${selected.driver_allowance},
         \n Total Estimated Amount : Rs : ${charges + DriverAllowance},
         \n Toll + Permit Extra charges Applicable ,
-        \n Client Name  : ${RoundTripName}  `
+        \n Client Name  : ${RoundTripName} , 
+        \n Client MobileNumber  : ${RoundTripMobile} 
+        `
       );
       const handleClick = () => {
         const url = `https://wa.me/${phoneNumber}?text=${message}`;

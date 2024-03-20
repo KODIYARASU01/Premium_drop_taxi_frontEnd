@@ -397,13 +397,15 @@
                 margin: 5px;
               }
             }
-
+            .date {
+              padding: 1rem 5rem !important;
+            }
             .origin,
             .destination {
               outline: none !important;
               width: 100% !important;
               border: transparent;
-              
+
               @media screen and (max-width: 900px) {
                 width: 92%;
               }
@@ -411,7 +413,7 @@
             .input1 {
               padding: 1rem 2rem !important;
               outline: none;
-                      border-radius: 5px !important;
+              border-radius: 5px !important;
               border: transparent;
               background-color: #ffffff !important;
               width: 96% !important;
@@ -838,19 +840,20 @@
 .roundTripNameError,
 .roundTripPickupDateError,
 .roundTripDropDateError,
+.roundTripmobileError,
 .localTripPickUpError,
 .localTripTimeError,
 .localTripNameError,
 .localTripDateError,
+.localTripmobileError,
 .airportTripPickUpError,
 .airportTripDropUpError,
 .airportTripTimeError,
 .airportTripNameError,
-.airportTripDateError {
+.airportTripDateError,
+.ariportTripmobileError {
   color: red;
   letter-spacing: 1px;
   font-size: 0.7rem;
   margin-bottom: 3px;
 }
-
-

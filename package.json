@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "private": true,
-  "homepage": "https://taxi.premiumdroptaxi.com",
+  "homepage": "https://taxi.premiumdroptaxi.com/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
